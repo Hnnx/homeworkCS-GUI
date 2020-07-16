@@ -6,13 +6,11 @@ xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 xmlns:local="clr-namespace:WPFTuts"
 mc:Ignorable="d"
 Title="MainWindow" Height="450" Width="800">
-    <StackPanel Name="pnlMainGrid" Background="AliceBlue">
+    <StackPanel Name="pnlMainGrid" Background="AliceBlue" Margin="10,10,2,0">
 
         <StackPanel Margin="90,224,492,109">
-            <TextBox Margin="0,0,0,10" Text="username" FontSize="25"  />
+            <TextBox Margin="0,0,0,10" Text="username" FontSize="25"  />            
             <TextBox Margin="0,10,0,0" Text="******" FontSize="25" Height="44"  />
         </StackPanel>
-      
-        <Button Content="Log In" Margin="323,216,310,115" FontSize="25" FontWeight="DemiBold" RenderTransformOrigin="-0.402,2.333"/>
     </StackPanel>
 </Window>
