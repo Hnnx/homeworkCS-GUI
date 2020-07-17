@@ -1,16 +1,8 @@
 ﻿<Window x:Class="WPFTuts.MainWindow"
-xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-xmlns:local="clr-namespace:WPFTuts"
-mc:Ignorable="d"
-Title="MainWindow" Height="450" Width="800">
-    <StackPanel Name="pnlMainGrid" Background="AliceBlue" Margin="10,10,2,0">
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="MainWindow" Height="350" Width="525">
+    <Grid>
 
-        <StackPanel Margin="90,224,492,109">
-            <TextBox Margin="0,0,0,10" Text="username" FontSize="25"  />            
-            <TextBox Margin="0,10,0,0" Text="******" FontSize="25" Height="44"  />
-        </StackPanel>
-    </StackPanel>
+    </Grid>
 </Window>
