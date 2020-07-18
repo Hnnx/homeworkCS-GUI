@@ -4,7 +4,8 @@
     Title="MainWindow" Height="350" Width="525">
     <Grid>
         <Grid.ColumnDefinitions>
-            <!-- border = 10px -->
+            <!-- "margin" = 10px -->
+            <!-- 0-based grid/col index -->
             <ColumnDefinition Width="10" />
             <ColumnDefinition Width="auto" />
             <ColumnDefinition Width="auto" />
@@ -21,5 +22,60 @@
             <RowDefinition Height="10"/>
         </Grid.RowDefinitions>
 
-    </Grid>   
+        <TextBlock Grid.Column="1" Grid.Row="1" FontFamily="Arial Nova" FontSize="22" TextAlignment="Center" Background="#FFF7D67C">
+            Block C1 R1
+        </TextBlock>
+        <TextBlock Grid.Column="2" Grid.Row="1" FontFamily="Arial Nova" FontSize="22" TextAlignment="Center" Background="#FF7CFF76">
+            Block C2 R1
+        </TextBlock>
+        <TextBlock Grid.Column="3" Grid.Row="1" FontFamily="Arial Nova" FontSize="22" TextAlignment="Center" Background="#FF5BDAFF">
+            Block C3 R1
+        </TextBlock>
+        <TextBlock Grid.Column="4" Grid.Row="1" FontFamily="Arial Nova" FontSize="22" TextAlignment="Center" Background="#FFFF7979">
+            Block C4 R1
+        </TextBlock>
+
+        <TextBlock Grid.Column="1" Grid.Row="2" FontFamily="Arial Nova" FontSize="22" TextAlignment="Center" Background="#FFF7D67C">
+            Block C1 R2
+        </TextBlock>
+        <TextBlock Grid.Column="2" Grid.Row="2" FontFamily="Arial Nova" FontSize="22" TextAlignment="Center" Background="#FF7CFF76">
+            Block C2 R2
+        </TextBlock>
+        <TextBlock Grid.Column="3" Grid.Row="2" FontFamily="Arial Nova" FontSize="22" TextAlignment="Center" Background="#FF5BDAFF">
+            Block C3 R2
+        </TextBlock>
+        <TextBlock Grid.Column="4" Grid.Row="2" FontFamily="Arial Nova" FontSize="22" TextAlignment="Center" Background="#FFFF7979" Foreground="Black">
+            Block C4 R2
+        </TextBlock>
+
+
+        <TextBlock Grid.Column="1" Grid.Row="3" FontFamily="Arial Nova" FontSize="22" TextAlignment="Center" Background="#FFF7D67C">
+            Block C1 R2
+        </TextBlock>
+        <TextBlock Grid.Column="2" Grid.Row="3" FontFamily="Arial Nova" FontSize="22" TextAlignment="Center" Background="#FF7CFF76">
+            Block C2 R2
+        </TextBlock>
+        <TextBlock Grid.Column="3" Grid.Row="3" FontFamily="Arial Nova" FontSize="22" TextAlignment="Center" Background="#FF5BDAFF">
+            Block C3 R2
+        </TextBlock>
+        <TextBlock Grid.Column="4" Grid.Row="3" FontFamily="Arial Nova" FontSize="22" TextAlignment="Center" Background="#FFFF7979" Foreground="Black">
+            Block C4 R2
+        </TextBlock>
+
+
+        <TextBlock Grid.Column="1" Grid.Row="4" FontFamily="Arial Nova" FontSize="22" TextAlignment="Center" Background="#FFF7D67C">
+            Block C1 R2
+        </TextBlock>
+        <TextBlock Grid.Column="2" Grid.Row="4" FontFamily="Arial Nova" FontSize="22" TextAlignment="Center" Background="#FF7CFF76">
+            Block C2 R2
+        </TextBlock>
+        <TextBlock Grid.Column="3" Grid.Row="4" FontFamily="Arial Nova" FontSize="22" TextAlignment="Center" Background="#FF5BDAFF">
+            Block C3 R2
+        </TextBlock>
+        <TextBlock Grid.Column="4" Grid.Row="4" FontFamily="Arial Nova" FontSize="22" TextAlignment="Center" Background="#FFFF7979" Foreground="Black">
+            Block C4 R2
+        </TextBlock>
+
+
+    </Grid>
 </Window>
