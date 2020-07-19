@@ -24,5 +24,16 @@ namespace WPFTuts
         {
             InitializeComponent();
         }
+
+        private void text_mouseUp(object sender, MouseButtonEventArgs e)
+        {
+            MessageBox.Show("You clicked me at " + e.GetPosition(this).ToString());
+        }
+
+        private void textPanel2_MouseUp(object sender, MouseButtonEventArgs e)
+        {
+            MessageBox.Show("AAA");
+        }
+
     }
 }
