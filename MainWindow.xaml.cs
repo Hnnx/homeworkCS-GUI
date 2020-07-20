@@ -32,8 +32,12 @@ namespace WPFTuts
 
         private void textPanel2_MouseUp(object sender, MouseButtonEventArgs e)
         {
-            MessageBox.Show("AAA");
+            MessageBox.Show("MessageBox.Show(\"\")");
         }
 
+        private void loginButton_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show($"Hello {userName.Text}");
+        }
     }
 }
