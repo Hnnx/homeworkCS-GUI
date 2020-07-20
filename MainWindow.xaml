@@ -4,7 +4,10 @@
     Title="Cols N Rows -  WPF Training" Height="350" Width="650"
     Icon="C:\Users\stibi\github\CRacing\iconpack\favicon.ico"
     ResizeMode="NoResize"
-    ShowInTaskbar="True">
+    ShowInTaskbar="True"
+    FontFamily="Arial Nova"    
+    FontSize="22"
+        >
     <Grid>
         <Grid.ColumnDefinitions>
             <!-- "margin" = 10px -->
@@ -22,48 +25,59 @@
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="10"/>
         </Grid.RowDefinitions>
 
-        <TextBlock Name="textPanel" MouseUp="text_mouseUp" Padding="10,0" Margin="0,0,0,10" Grid.Column="1" Grid.Row="1" FontFamily="Arial Nova" FontSize="22" TextAlignment="Center" Background="#FFF7D67C">
+        
+        <!-- ROW 1 -->
+        <TextBlock Name="textPanel" MouseUp="text_mouseUp" Padding="7" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2" TextAlignment="Center" Background="#FFF7D67C">
             EVENT C1 R1
         </TextBlock>
-        <TextBlock Padding="10,0" Margin="0,0,0,10" Grid.Column="2" Grid.Row="1" FontFamily="Arial Nova" FontSize="22" TextAlignment="Center" Background="#FF7CFF76">
-            Block C2 R1
-        </TextBlock>
-        <TextBlock Padding="10,0" Margin="0,0,0,10" Grid.Column="3" Grid.Row="1" FontFamily="Arial Nova" FontSize="22" TextAlignment="Center" Background="#FF5BDAFF">
+        <TextBlock Padding="7"  Grid.Column="3" Grid.Row="1" TextAlignment="Center" Background="#FF5BDAFF">
             Block C3 R1
         </TextBlock>
-        <TextBlock Padding="10,0" Margin="0,0,0,10" Grid.Column="4" Grid.Row="1" FontFamily="Arial Nova" FontSize="22" TextAlignment="Center" Background="#FFFF7979">
+        <TextBlock Padding="7" Grid.Column="4" Grid.Row="1" TextAlignment="Center" Background="#FFFF7979">
             Block C4 R1
         </TextBlock>
 
-        <TextBlock Name="textPanel2" MouseUp="textPanel2_MouseUp"  Grid.Column="1" Margin="0,0,0,10" Grid.Row="2" FontFamily="Arial Nova" FontSize="22" TextAlignment="Center" Background="#FFF7D67C">
-            show AAA
+
+        <!-- ROW 2 -->
+        <TextBlock Padding="2,0" Name="textPanel2" MouseUp="textPanel2_MouseUp"  Grid.Column="1" Grid.Row="2" TextAlignment="Center" Background="#FFF7D67C">
+            DISPLAY MSG
         </TextBlock>
-        <TextBlock Grid.Column="2" Margin="0,0,0,10" Grid.Row="2" FontFamily="Arial Nova" FontSize="22" TextAlignment="Center" Background="#FF7CFF76">
+        <TextBlock Grid.Column="2"  Grid.Row="2" TextAlignment="Center" Background="#FF7CFF76">
             Block C2 R2
         </TextBlock>
-        <TextBlock Grid.Column="3" Margin="0,0,0,10" Grid.Row="2" FontFamily="Arial Nova" FontSize="22" TextAlignment="Center" Background="#FF5BDAFF">
+        <TextBlock Grid.Column="3"  Grid.Row="2" TextAlignment="Center" Background="#FF5BDAFF">
             Block C3 R2
         </TextBlock>
-        <TextBlock Grid.Column="4" Margin="0,0,0,10" Grid.Row="2" FontFamily="Arial Nova" FontSize="22" TextAlignment="Center" Background="#FFFF7979" Foreground="Black">
+        <TextBlock Grid.Column="4" Grid.Row="2" TextAlignment="Center" Background="#FFFF7979" Foreground="Black">
             Block C4 R2
         </TextBlock>
 
-
-        <TextBlock Grid.Column="1" Margin="0,0,0,10" Grid.Row="3" FontFamily="Arial Nova" FontSize="22" TextAlignment="Center" Background="#FFF7D67C">
+        <!-- ROW 3 -->
+        <TextBlock Grid.Column="1" Grid.Row="3"  TextAlignment="Center" Background="#FFF7D67C">
             Block C1 R2
         </TextBlock>
-        <TextBlock Grid.Column="2" Margin="0,0,0,10" Grid.Row="3" FontFamily="Arial Nova" FontSize="22" TextAlignment="Center" Background="#FF7CFF76">
+        <TextBlock Grid.Column="2" Grid.Row="3" TextAlignment="Center" Background="#FF7CFF76">
             Block C2 R2
         </TextBlock>
-        <TextBlock Grid.Column="3" Margin="0,0,0,10" Grid.Row="3" FontFamily="Arial Nova" FontSize="22" TextAlignment="Center" Background="#FF5BDAFF">
+        <TextBlock Grid.Column="3" Grid.Row="3" TextAlignment="Center" Background="#FF5BDAFF">
             Block C3 R2
         </TextBlock>
-        <TextBlock Grid.Column="4" Margin="0,0,0,10"  Grid.Row="3" FontFamily="Arial Nova" FontSize="22" TextAlignment="Center" Background="#FFFF7979" Foreground="Black">
+        <TextBlock Grid.Column="4" Grid.Row="3" TextAlignment="Center" Background="#FFFF7979" Foreground="Black">
             Block C4 R2
         </TextBlock>
-    </Grid>
+
+        <!-- ROW 4 -->
+
+        <TextBlock Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="3" FontSize="35" Text="Cipa Racing Login Form" />
+        <TextBox x:Name="userName"  Grid.Column="4" Grid.Row="4" Margin="10" Grid.ColumnSpan="2" />
+        
+          <!-- ROW 5 -->
+        <Button Content="Log In" Grid.Column="1" Grid.Row="5" x:Name="loginButton" Click="loginButton_Click" />
+    </Grid> 
 </Window>
