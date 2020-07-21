@@ -27,17 +27,17 @@ namespace WPFTuts
 
         private void text_mouseUp(object sender, MouseButtonEventArgs e)
         {
-            MessageBox.Show("You clicked me at " + e.GetPosition(this).ToString());
+            MessageBox.Show("You clicked me at " + e.GetPosition(this).ToString(), "Target Area");
         }
 
         private void textPanel2_MouseUp(object sender, MouseButtonEventArgs e)
         {
-            MessageBox.Show("MessageBox.Show(\"\")");
+            MessageBox.Show("MessageBox.Show(\"Hello user\");");
         }
 
         private void loginButton_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show($"Hello {userName.Text}");
+            MessageBox.Show($"Hello {userName.Text}", "Greeting");
         }
     }
 }
