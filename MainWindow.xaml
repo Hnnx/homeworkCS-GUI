@@ -122,7 +122,9 @@ Background="{DynamicResource WindowBackgroundBrush}"
             </ComboBox>
         </StackPanel>
 
-        <Image Grid.Row="1" Grid.Column="5" Grid.RowSpan="6" Source="C:\Users\anhjje\Desktop\kacic.png" MinWidth="250" />
+         <Image Grid.Row="1" Grid.Column="5" Grid.RowSpan="6" Source="C:\Users\anhjje\Desktop\kacic.png" MinWidth="250" /> 
+
+        <!--<MediaElement Grid.Row="1" Grid.Column="5" Grid.RowSpan="6" Source="C:\Users\anhjje\Desktop\grob.mp4" MinWidth="250" />-->
 
 
     </Grid>
