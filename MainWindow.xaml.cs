@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -20,9 +21,18 @@ namespace WPFTuts
     /// </summary>
     public partial class MainWindow : Window
     {
+
         public MainWindow()
         {
             InitializeComponent();
+
+            Person x = new Person();
+
+            x.people.Add(new Person { firstName = "Jozo", lastName = "Bozo" });
+            x.people.Add(new Person { firstName = "Hanzo", lastName = "Panzo" });
+            x.people.Add(new Person { firstName = "Fidi", lastName = "Dido" });
+
+            cBox.ItemsSource = x.people;
         }
 
         private void text_mouseUp(object sender, MouseButtonEventArgs e)
