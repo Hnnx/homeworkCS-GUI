@@ -7,7 +7,7 @@ ShowInTaskbar="True"
 FontFamily="Arial Nova"    
 FontSize="22"
 Background="{DynamicResource WindowBackgroundBrush}"
-    >
+>
     <Window.Resources>
         <sys:String x:Key="strJanir">Janir Racing Login</sys:String>
 
@@ -56,42 +56,42 @@ Background="{DynamicResource WindowBackgroundBrush}"
 
         <!-- ROW 1 -->
         <TextBlock Name="textPanel" MouseUp="text_mouseUp" Padding="7" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2" TextAlignment="Center" Background="#FFF7D67C">
-        EVENT C1 R1
+    EVENT C1 R1
         </TextBlock>
         <TextBlock Padding="7"  Grid.Column="3" Grid.Row="1" TextAlignment="Center" Background="#FF5BDAFF">
-        Block C3 R1
+    Block C3 R1
         </TextBlock>
         <TextBlock Padding="7" Grid.Column="4" Grid.Row="1" TextAlignment="Center" Background="#FFFF7979">
-        Block C4 R1
+    Block C4 R1
         </TextBlock>
 
 
         <!-- ROW 2 -->
         <TextBlock Padding="2,0" Name="textPanel2" MouseUp="textPanel2_MouseUp"  Grid.Column="1" Grid.Row="2" TextAlignment="Center" Background="#FFF7D67C">
-        DISPLAY MSG
+    DISPLAY MSG
         </TextBlock>
         <TextBlock Grid.Column="2"  Grid.Row="2" TextAlignment="Center" Background="#FF7CFF76">
-        Block C2 R2
+    Block C2 R2
         </TextBlock>
         <TextBlock Grid.Column="3"  Grid.Row="2" TextAlignment="Center" Background="#FF5BDAFF">
-        Block C3 R2
+    Block C3 R2
         </TextBlock>
         <TextBlock Grid.Column="4" Grid.Row="2" TextAlignment="Center" Background="#FFFF7979" Foreground="Black">
-        Block C4 R2
+    Block C4 R2
         </TextBlock>
 
         <!-- ROW 3 -->
         <TextBlock Grid.Column="1" Grid.Row="3"  TextAlignment="Center" Background="#FFF7D67C">
-        Block C1 R2
+    Block C1 R2
         </TextBlock>
         <TextBlock Grid.Column="2" Grid.Row="3" TextAlignment="Center" Background="#FF7CFF76">
-        Block C2 R2
+    Block C2 R2
         </TextBlock>
         <TextBlock Grid.Column="3" Grid.Row="3" TextAlignment="Center" Background="#FF5BDAFF">
-        Block C3 R2
+    Block C3 R2
         </TextBlock>
         <TextBlock Grid.Column="4" Grid.Row="3" TextAlignment="Center" Background="#FFFF7979" Foreground="Black">
-        Block C4 R2
+    Block C4 R2
         </TextBlock>
 
         <!-- ROW 4 -->
@@ -104,14 +104,14 @@ Background="{DynamicResource WindowBackgroundBrush}"
 
         <!-- ROW 6-->
 
-        <StackPanel Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="2" >
+        <StackPanel Orientation="Vertical" Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="2" >
             <Label Content="{StaticResource cbTitle}"/>
             <ComboBox Margin="10,0" ItemsSource="{StaticResource comboBoxItems}"/>
         </StackPanel>
 
         <!-- ROW 7 -->
-
-        <StackPanel  Grid.Column="3" Grid.Row="6" Grid.ColumnSpan="2">
+        
+        <StackPanel Orientation="Vertical" Grid.Column="3" Grid.Row="6" Grid.ColumnSpan="2">
             <Label Content="Name:"/>
             <ComboBox x:Name="cBox" Margin="10,0">
                 <ComboBox.ItemTemplate>
@@ -122,10 +122,13 @@ Background="{DynamicResource WindowBackgroundBrush}"
             </ComboBox>
         </StackPanel>
 
-         <Image Grid.Row="1" Grid.Column="5" Grid.RowSpan="6" Source="C:\Users\anhjje\Desktop\kacic.png" MinWidth="250" /> 
+        <Image Grid.Row="1" Grid.Column="5" Grid.RowSpan="5" Source="C:\Users\anhjje\Desktop\kacic.png" MinWidth="250" />
 
-        <!--<MediaElement Grid.Row="1" Grid.Column="5" Grid.RowSpan="6" Source="C:\Users\anhjje\Desktop\grob.mp4" MinWidth="250" />-->
-
+        <Border  Grid.Row="6" Grid.Column="5" Grid.RowSpan="1" BorderBrush="Black" BorderThickness="5" CornerRadius="10">
+            <StackPanel>
+                <MediaElement Source="C:\Users\anhjje\Desktop\grob.mp4" MinWidth="250" />
+            </StackPanel>
+        </Border>
 
     </Grid>
 </Window>
