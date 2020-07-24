@@ -15,7 +15,7 @@ StartupUri="MainWindow.xaml">
 
 
         <!-- Images -->
-            <BitmapImage x:Key="kacic" UriSource="img/kacic"/>
+            <BitmapImage x:Key="kacic" UriSource="img/kacic.jpg"/>
         </ResourceDictionary>
 
     </Application.Resources>
