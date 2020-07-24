@@ -21,11 +21,6 @@ Background="{DynamicResource WindowBackgroundBrush}"
             <sys:String>Curves</sys:String>
         </x:Array>
 
-        <LinearGradientBrush x:Key="WindowBackgroundBrush">
-            <GradientStop Offset="0" Color="BlueViolet"/>
-            <GradientStop Offset="1" Color="WhiteSmoke"/>
-        </LinearGradientBrush>
-
     </Window.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
@@ -121,14 +116,24 @@ Background="{DynamicResource WindowBackgroundBrush}"
                 </ComboBox.ItemTemplate>
             </ComboBox>
         </StackPanel>
+        
+        
+        <!-- ROW 8 -->
 
-        <Image Grid.Row="1" Grid.Column="5" Grid.RowSpan="5" Source="C:\Users\anhjje\Desktop\kacic.png" MinWidth="250" />
+        <Button Content="Enter" Grid.Column="1" Grid.Row="7" x:Name="nextWin" Margin="10,30" Grid.ColumnSpan="2" Click="nextWin_Click"/>
 
-        <Border  Grid.Row="6" Grid.Column="5" Grid.RowSpan="1" BorderBrush="Black" BorderThickness="5" CornerRadius="10">
+
+        <!-- Slike/Video v kotu -->
+
+        <Image Grid.Row="0" Grid.Column="5" Grid.RowSpan="6" Source="C:\Users\anhjje\Desktop\kacic.png" MinWidth="250" MaxWidth="450" />
+
+        <Border  Grid.Row="6" Grid.Column="5" Grid.RowSpan="2" BorderBrush="Black" BorderThickness="5" CornerRadius="10" MinWidth="250" MaxWidth="600" >
             <StackPanel>
-                <MediaElement Source="C:\Users\anhjje\Desktop\grob.mp4" MinWidth="250" />
+                <MediaElement Source="C:\Users\anhjje\Desktop\grob.mp4" LoadedBehavior="Play" IsMuted="true" />
             </StackPanel>
         </Border>
+        
+        
 
     </Grid>
 </Window>

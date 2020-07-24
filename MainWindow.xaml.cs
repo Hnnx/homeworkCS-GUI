@@ -49,5 +49,14 @@ namespace WPFTuts
         {
             MessageBox.Show($"Hello {userName.Text}", "Greeting");
         }
+
+        public bool AutoPlay { get; set; }
+
+        private void nextWin_Click(object sender, RoutedEventArgs e)
+        {
+            Window1 win1 = new Window1();
+            this.Close();
+            win1.Show();
+        }
     }
 }
