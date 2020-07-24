@@ -6,21 +6,18 @@ Title="Cols N Rows -  WPF Training" Height="450" Width="850"
 ShowInTaskbar="True"
 FontFamily="Arial Nova"    
 FontSize="22"
-Background="{DynamicResource WindowBackgroundBrush}"
+Background="{StaticResource WindowBackgroundBrush}"
 >
     <Window.Resources>
         <sys:String x:Key="strJanir">Janir Racing Login</sys:String>
 
-
         <sys:String x:Key="cbTitle">Type:</sys:String>
-
 
         <x:Array x:Key="comboBoxItems" Type="sys:String">
             <sys:String>Rush</sys:String>
             <sys:String>Panorama</sys:String>
             <sys:String>Curves</sys:String>
         </x:Array>
-
     </Window.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
@@ -117,7 +114,6 @@ Background="{DynamicResource WindowBackgroundBrush}"
             </ComboBox>
         </StackPanel>
         
-        
         <!-- ROW 8 -->
 
         <Button Content="Enter" Grid.Column="1" Grid.Row="7" x:Name="nextWin" Margin="10,30" Grid.ColumnSpan="2" Click="nextWin_Click"/>
@@ -125,15 +121,13 @@ Background="{DynamicResource WindowBackgroundBrush}"
 
         <!-- Slike/Video v kotu -->
 
-        <Image Grid.Row="0" Grid.Column="5" Grid.RowSpan="6" Source="C:\Users\anhjje\Desktop\kacic.png" MinWidth="250" MaxWidth="450" />
+        <Image Grid.Row="0" Grid.Column="5" Grid.RowSpan="6" Source="{StaticResource kacic}" MinWidth="250" MaxWidth="450" />
 
         <Border  Grid.Row="6" Grid.Column="5" Grid.RowSpan="2" BorderBrush="Black" BorderThickness="5" CornerRadius="10" MinWidth="250" MaxWidth="600" >
             <StackPanel>
                 <MediaElement Source="C:\Users\anhjje\Desktop\grob.mp4" LoadedBehavior="Play" IsMuted="true" />
             </StackPanel>
         </Border>
-        
-        
 
     </Grid>
 </Window>

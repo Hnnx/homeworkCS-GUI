@@ -13,6 +13,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.IO;
+using System.Reflection;
 
 namespace WPFTuts
 {
@@ -49,8 +51,6 @@ namespace WPFTuts
         {
             MessageBox.Show($"Hello {userName.Text}", "Greeting");
         }
-
-        public bool AutoPlay { get; set; }
 
         private void nextWin_Click(object sender, RoutedEventArgs e)
         {
