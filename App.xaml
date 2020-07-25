@@ -1,13 +1,22 @@
 ﻿<Application x:Class="WPFTuts.App"
-             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:WPFTuts"
-             StartupUri="Window1.xaml">
-             <!-- STARTING WINDOW -->
+xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+xmlns:local="clr-namespace:WPFTuts"
+StartupUri="MainWindow.xaml">
+    <!-- STARTING WINDOW -->
     <Application.Resources>
-        <LinearGradientBrush x:Key="WindowBackgroundBrush">
-            <GradientStop Offset="0" Color="BlueViolet"/>
-            <GradientStop Offset="1" Color="WhiteSmoke"/>
-        </LinearGradientBrush>
+
+        <ResourceDictionary>
+        <!-- Gradient Brush-->
+            <LinearGradientBrush x:Key="WindowBackgroundBrush">
+                <GradientStop Offset="0" Color="BlueViolet"/>
+                <GradientStop Offset="1" Color="WhiteSmoke"/>
+            </LinearGradientBrush>
+
+
+        <!-- Images -->
+            <BitmapImage x:Key="kacic" UriSource="img/kacic.jpg"/>
+        </ResourceDictionary>
+
     </Application.Resources>
 </Application>
