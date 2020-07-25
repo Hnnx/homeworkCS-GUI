@@ -37,73 +37,26 @@ Background="{StaticResource WindowBackgroundBrush}"
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="10"/>
         </Grid.RowDefinitions>
 
 
         <!-- ROW 1 -->
-        <TextBlock Name="textPanel" MouseUp="text_mouseUp" Padding="7" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2" TextAlignment="Center" Background="#FFF7D67C">
-    EVENT C1 R1
-        </TextBlock>
-        <TextBlock Padding="7"  Grid.Column="3" Grid.Row="1" TextAlignment="Center" Background="#FF5BDAFF">
-    Block C3 R1
-        </TextBlock>
-        <TextBlock Padding="7" Grid.Column="4" Grid.Row="1" TextAlignment="Center" Background="#FFFF7979">
-    Block C4 R1
-        </TextBlock>
-
+        <TextBlock Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2" FontSize="35" Text="{StaticResource strJanir}" />
+        <TextBox x:Name="userName"  Grid.Column="1" Grid.Row="2" Margin="5,20" Grid.ColumnSpan="1" />
 
         <!-- ROW 2 -->
-        <TextBlock Padding="2,0" Name="textPanel2" MouseUp="textPanel2_MouseUp"  Grid.Column="1" Grid.Row="2" TextAlignment="Center" Background="#FFF7D67C">
-    DISPLAY MSG
-        </TextBlock>
-        <TextBlock Grid.Column="2"  Grid.Row="2" TextAlignment="Center" Background="#FF7CFF76">
-    Block C2 R2
-        </TextBlock>
-        <TextBlock Grid.Column="3"  Grid.Row="2" TextAlignment="Center" Background="#FF5BDAFF">
-    Block C3 R2
-        </TextBlock>
-        <TextBlock Grid.Column="4" Grid.Row="2" TextAlignment="Center" Background="#FFFF7979" Foreground="Black">
-    Block C4 R2
-        </TextBlock>
+        <Button Content="Log In" Grid.Column="2" Grid.Row="2" x:Name="loginButton" Click="loginButton_Click" Margin="81,20,77,20" />
 
         <!-- ROW 3 -->
-        <TextBlock Grid.Column="1" Grid.Row="3"  TextAlignment="Center" Background="#FFF7D67C">
-    Block C1 R2
-        </TextBlock>
-        <TextBlock Grid.Column="2" Grid.Row="3" TextAlignment="Center" Background="#FF7CFF76">
-    Block C2 R2
-        </TextBlock>
-        <TextBlock Grid.Column="3" Grid.Row="3" TextAlignment="Center" Background="#FF5BDAFF">
-    Block C3 R2
-        </TextBlock>
-        <TextBlock Grid.Column="4" Grid.Row="3" TextAlignment="Center" Background="#FFFF7979" Foreground="Black">
-    Block C4 R2
-        </TextBlock>
-
-        <!-- ROW 4 -->
-
-        <TextBlock Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="3" FontSize="35" Text="{StaticResource strJanir}" />
-        <TextBox x:Name="userName"  Grid.Column="1" Grid.Row="5" Margin="10" Grid.ColumnSpan="2" />
-
-        <!-- ROW 5 -->
-        <Button Content="Log In" Grid.Column="3" Grid.Row="5" x:Name="loginButton" Click="loginButton_Click" Margin="10" />
-
-        <!-- ROW 6-->
-
-        <StackPanel Orientation="Vertical" Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="2" >
+        <StackPanel Orientation="Vertical" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="1" >
             <Label Content="{StaticResource cbTitle}"/>
             <ComboBox Margin="10,0" ItemsSource="{StaticResource comboBoxItems}"/>
         </StackPanel>
 
-        <!-- ROW 7 -->
-        
-        <StackPanel Orientation="Vertical" Grid.Column="3" Grid.Row="6" Grid.ColumnSpan="2">
+        <!-- ROW 4 -->
+        <StackPanel Orientation="Vertical" Grid.Column="2" Grid.Row="3" Grid.ColumnSpan="1">
             <Label Content="Name:"/>
             <ComboBox x:Name="cBox" Margin="10,0">
                 <ComboBox.ItemTemplate>
@@ -113,21 +66,6 @@ Background="{StaticResource WindowBackgroundBrush}"
                 </ComboBox.ItemTemplate>
             </ComboBox>
         </StackPanel>
-        
-        <!-- ROW 8 -->
-
-        <Button Content="Enter" Grid.Column="1" Grid.Row="7" x:Name="nextWin" Margin="10,30" Grid.ColumnSpan="2" Click="nextWin_Click"/>
-
-
-        <!-- Slike/Video v kotu -->
-
-        <Image Grid.Row="0" Grid.Column="5" Grid.RowSpan="6" Source="{StaticResource kacic}" MinWidth="250" MaxWidth="450" />
-
-        <Border  Grid.Row="6" Grid.Column="5" Grid.RowSpan="2" BorderBrush="Black" BorderThickness="5" CornerRadius="10" MinWidth="250" MaxWidth="600" >
-            <StackPanel>
-                <MediaElement Source="C:\Users\anhjje\Desktop\grob.mp4" LoadedBehavior="Play" IsMuted="true" />
-            </StackPanel>
-        </Border>
 
     </Grid>
 </Window>

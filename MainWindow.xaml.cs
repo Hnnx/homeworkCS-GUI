@@ -27,7 +27,7 @@ namespace WPFTuts
         public MainWindow()
         {
             InitializeComponent();
-
+                
             Person x = new Person();
 
             x.people.Add(new Person { firstName = "Jozo", lastName = "Bozo" });
@@ -35,16 +35,6 @@ namespace WPFTuts
             x.people.Add(new Person { firstName = "Fidi", lastName = "Dido" });
 
             cBox.ItemsSource = x.people;
-        }
-
-        private void text_mouseUp(object sender, MouseButtonEventArgs e)
-        {
-            MessageBox.Show("You clicked me at " + e.GetPosition(this).ToString(), "Target Area");
-        }
-
-        private void textPanel2_MouseUp(object sender, MouseButtonEventArgs e)
-        {
-            MessageBox.Show("MessageBox.Show(\"Hello user\");");
         }
 
         private void loginButton_Click(object sender, RoutedEventArgs e)
