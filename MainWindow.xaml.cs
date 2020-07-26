@@ -28,25 +28,11 @@ namespace WPFTuts
         {
             InitializeComponent();
                 
-            Person x = new Person();
-
-            x.people.Add(new Person { firstName = "Jozo", lastName = "Bozo" });
-            x.people.Add(new Person { firstName = "Hanzo", lastName = "Panzo" });
-            x.people.Add(new Person { firstName = "Fidi", lastName = "Dido" });
-
-            cBox.ItemsSource = x.people;
         }
 
-        private void loginButton_Click(object sender, RoutedEventArgs e)
+        private void loginBtn_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show($"Hello {userName.Text}", "Greeting");
-        }
-
-        private void nextWin_Click(object sender, RoutedEventArgs e)
-        {
-            Window1 win1 = new Window1();
-            this.Close();
-            win1.Show();
+            MessageBox.Show($"Welcome, {userName.Text}", "Login Successful");
         }
     }
 }

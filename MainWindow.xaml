@@ -4,8 +4,9 @@ xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 xmlns:sys="clr-namespace:System;assembly=mscorlib"
 Title="Cols N Rows -  WPF Training" Height="450" Width="850"
 ShowInTaskbar="True"
-FontFamily="Arial Nova"    
-FontSize="22"
+FontFamily="Segoe UI Semilight"
+FontSize="22"  
+Foreground="White"
 Background="{StaticResource WindowBackgroundBrush}"
 >
     <Window.Resources>
@@ -21,15 +22,13 @@ Background="{StaticResource WindowBackgroundBrush}"
     </Window.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
-            <!-- "margin" = 10px -->
-            <!-- 0-based grid/col index -->
-            <ColumnDefinition Width="10" />
-            <ColumnDefinition Width="auto" />
-            <ColumnDefinition Width="auto" />
-            <ColumnDefinition Width="auto" />
-            <ColumnDefinition Width="auto" />
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="10"/>
+            <!-- 0-based grid system -->
+            <ColumnDefinition Width="10"/> <!-- Col 0 -->
+            <ColumnDefinition Width="auto"/> <!-- Col 1 -->
+            <ColumnDefinition Width="auto"/> <!-- Col 2 -->
+            <ColumnDefinition Width="auto"/> <!-- Col 3 -->
+            <ColumnDefinition Width="*"/> <!-- Col 4 -->
+            <ColumnDefinition Width="10"/> <!-- Col 5-->
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="10"/>
@@ -37,35 +36,20 @@ Background="{StaticResource WindowBackgroundBrush}"
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="10"/>
         </Grid.RowDefinitions>
-
-
-        <!-- ROW 1 -->
-        <TextBlock Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2" FontSize="35" Text="{StaticResource strJanir}" />
-        <TextBox x:Name="userName"  Grid.Column="1" Grid.Row="2" Margin="5,20" Grid.ColumnSpan="1" />
-
-        <!-- ROW 2 -->
-        <Button Content="Log In" Grid.Column="2" Grid.Row="2" x:Name="loginButton" Click="loginButton_Click" Margin="81,20,77,20" />
-
-        <!-- ROW 3 -->
-        <StackPanel Orientation="Vertical" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="1" >
-            <Label Content="{StaticResource cbTitle}"/>
-            <ComboBox Margin="10,0" ItemsSource="{StaticResource comboBoxItems}"/>
-        </StackPanel>
-
-        <!-- ROW 4 -->
-        <StackPanel Orientation="Vertical" Grid.Column="2" Grid.Row="3" Grid.ColumnSpan="1">
-            <Label Content="Name:"/>
-            <ComboBox x:Name="cBox" Margin="10,0">
-                <ComboBox.ItemTemplate>
-                    <DataTemplate>
-                        <TextBlock Text="{Binding fullName}"/>
-                    </DataTemplate>
-                </ComboBox.ItemTemplate>
-            </ComboBox>
-        </StackPanel>
+        
+        <!-- Row 1 - title -->
+        <TextBlock Grid.Column="1" Grid.Row="1"  Grid.ColumnSpan="3" Text="Janir Racing Form" FontSize="42" Margin="0,0,0,30" />
+        
+        <!-- Row 2 username -->
+        <TextBlock Grid.Column="1" Grid.Row="2" Text="Username" FontWeight="Bold"/>
+        <TextBox  Grid.Column="2" Grid.Row="2" x:Name="userName" Width="200" />
+        
+        <!-- Row 3 Button -->
+        <Button Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="2" Content="Log in" x:Name="loginBtn" Margin="10" FontFamily="Arial Nova" Click="loginBtn_Click" />
 
     </Grid>
 </Window>
