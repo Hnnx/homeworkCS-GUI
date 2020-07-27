@@ -27,7 +27,14 @@ namespace WPFTuts
         public MainWindow()
         {
             InitializeComponent();
-                
+
+            Track t = new Track();
+
+            t.tracks.Add(new Track { TrackName = "Logatec", Type="Rush", ShortDesc="Hiter tempo po ovinkih do idrije", Location="Logatec, SLO", Length=12.8, Diff="mid/high", LongDesc="Lorem Ipsum long Desc long Desc" });
+            t.tracks.Add(new Track { TrackName = "Crni Kal", Type="Rush", ShortDesc="Dolgi ovinki, vista na vrhu, restavracija v sredini", Location="Koper, SLO", Length=4.2, Diff="low/mid", LongDesc="Lorem Ipsum long Desc long Desc" });
+            t.tracks.Add(new Track { TrackName = "Vrsic", Type="Climb", ShortDesc="Kratki ostri ovinki, vista na vrhu, pozimi sneg", Location="Vrsic, SLO", Length=8.2, Diff="mid", LongDesc="Lorem Ipsum long Desc long Desc" });
+
+            rideType.ItemsSource = t.tracks;
         }
 
         private void loginBtn_Click(object sender, RoutedEventArgs e)

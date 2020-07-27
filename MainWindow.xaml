@@ -42,14 +42,28 @@ Background="{StaticResource WindowBackgroundBrush}"
         </Grid.RowDefinitions>
         
         <!-- Row 1 - title -->
-        <TextBlock Grid.Column="1" Grid.Row="1"  Grid.ColumnSpan="3" Text="Janir Racing Form" FontSize="42" Margin="0,0,0,30" />
+        <TextBlock Grid.Column="1" Grid.Row="1"  Grid.ColumnSpan="3" 
+                   Text="Janir Racing Form" FontSize="42" Margin="0,0,0,30" />
         
         <!-- Row 2 username -->
         <TextBlock Grid.Column="1" Grid.Row="2" Text="Username" FontWeight="Bold"/>
         <TextBox  Grid.Column="2" Grid.Row="2" x:Name="userName" Width="200" />
         
         <!-- Row 3 Button -->
-        <Button Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="2" Content="Log in" x:Name="loginBtn" Margin="10" FontFamily="Arial Nova" Click="loginBtn_Click" />
+        <Button Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="2"
+                Content="Log in" x:Name="loginBtn"
+                Margin="10" FontFamily="Arial Nova" Click="loginBtn_Click" />
+
+        <!-- Row 4 ComboBox -->
+        <ComboBox Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="2" 
+                  Margin="10,0"
+                  x:Name="rideType" ToolTip="Ride Type">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding TrackName}"/>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
 
     </Grid>
 </Window>
