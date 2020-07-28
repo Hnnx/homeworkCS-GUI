@@ -55,15 +55,20 @@ Background="{StaticResource WindowBackgroundBrush}"
                 Margin="10" FontFamily="Arial Nova" Click="loginBtn_Click" />
 
         <!-- Row 4 ComboBox -->
-        <ComboBox Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="2" 
+        <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="2">
+            <Label Content="Type: "/>
+            <ComboBox
                   Margin="10,0"
-                  x:Name="rideType" ToolTip="Ride Type">
+                  x:Name="rideType" ToolTip="Ride Type"
+                  Width="150">
             <ComboBox.ItemTemplate>
                 <DataTemplate>
                     <TextBlock Text="{Binding TrackName}"/>
                 </DataTemplate>
             </ComboBox.ItemTemplate>
         </ComboBox>
+                       
+        </StackPanel>
 
     </Grid>
 </Window>
