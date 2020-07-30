@@ -40,10 +40,23 @@ namespace WPFTuts
         private void loginBtn_Click(object sender, RoutedEventArgs e)
         {
 
-            if(userName.Text.Length < 1)
+            if (userName.Text.Length == 0)
             {
 
-                MessageBox.Show($"Username cannot be empty", "Error :(", MessageBoxButton.OK ,MessageBoxImage.Error);
+                MessageBox.Show($"Username cannot be empty", "Error :(", MessageBoxButton.OK, MessageBoxImage.Error);
+
+            }
+
+            else if (userName.Text.Length >= 16)
+            {
+                MessageBox.Show($"Username should be between 3 and 16 characters", "Error :(", MessageBoxButton.OK, MessageBoxImage.Error);
+
+            }
+
+            else if (userName.Text.Length <= 2)
+            {
+
+                MessageBox.Show($"Username should be between 3 and 16 characters", "Error :(", MessageBoxButton.OK, MessageBoxImage.Error);
 
             }
             else
