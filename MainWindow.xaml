@@ -11,14 +11,6 @@ Background="{StaticResource WindowBackgroundBrush}"
 >
     <Window.Resources>
         <sys:String x:Key="strJanir">Janir Racing Login</sys:String>
-
-        <sys:String x:Key="cbTitle">Type:</sys:String>
-
-        <x:Array x:Key="comboBoxItems" Type="sys:String">
-            <sys:String>Rush</sys:String>
-            <sys:String>Panorama</sys:String>
-            <sys:String>Curves</sys:String>
-        </x:Array>
     </Window.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
@@ -43,32 +35,38 @@ Background="{StaticResource WindowBackgroundBrush}"
         
         <!-- Row 1 - title -->
         <TextBlock Grid.Column="1" Grid.Row="1"  Grid.ColumnSpan="3" 
-                   Text="Janir Racing Form" FontSize="42" Margin="0,0,0,30" />
+                   Text="{DynamicResource strJanir}" FontSize="42" Margin="0,0,0,30" />
         
         <!-- Row 2 username -->
-        <TextBlock Grid.Column="1" Grid.Row="2" Text="Username" FontWeight="Bold"/>
-        <TextBox  Grid.Column="2" Grid.Row="2" x:Name="userName" Width="200" />
+        <TextBlock Grid.Column="1" Grid.Row="2" Text="Username" FontWeight="Bold" Margin="10,0" VerticalAlignment="Center"/>
+        <TextBox  Grid.Column="2" Grid.Row="2" x:Name="userName" Width="200" Margin="10,0" />
         
         <!-- Row 3 Button -->
-        <Button Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="2"
+        <Button Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="2"
                 Content="Log in" x:Name="loginBtn"
                 Margin="10" FontFamily="Arial Nova" Click="loginBtn_Click" />
 
         <!-- Row 4 ComboBox -->
-        <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="2">
-            <Label Content="Type: "/>
+        <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="2"
+                    >
+            <TextBlock Text="Ride Type" VerticalAlignment="Center"/>
             <ComboBox
-                  Margin="10,0"
+                  Margin="10,5"
                   x:Name="rideType" ToolTip="Ride Type"
-                  Width="150">
+                  Width="200" SelectedIndex="0">
             <ComboBox.ItemTemplate>
                 <DataTemplate>
                     <TextBlock Text="{Binding TrackName}"/>
                 </DataTemplate>
             </ComboBox.ItemTemplate>
         </ComboBox>
-                       
         </StackPanel>
+        
+        <!-- image -->
+
+        <Image Grid.Column="4" Grid.Row="1" Grid.RowSpan="6" 
+               Source="img\kacic.jpg"
+               MinWidth="150"/>
 
     </Grid>
 </Window>

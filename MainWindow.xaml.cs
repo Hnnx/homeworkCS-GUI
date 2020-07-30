@@ -39,7 +39,18 @@ namespace WPFTuts
 
         private void loginBtn_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show($"Welcome, {userName.Text}", "Login Successful");
+
+            if(userName.Text.Length < 1)
+            {
+
+                MessageBox.Show($"Username cannot be empty", "Error :(", MessageBoxButton.OK ,MessageBoxImage.Error);
+
+            }
+            else
+            {
+
+            MessageBox.Show($"Welcome, {userName.Text}", "Login Successful",MessageBoxButton.OK);
+            }
         }
     }
 }
