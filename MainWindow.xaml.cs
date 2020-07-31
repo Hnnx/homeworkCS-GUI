@@ -13,6 +13,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.IO;
+using System.Reflection;
 
 namespace WPFTuts
 {
@@ -26,37 +28,42 @@ namespace WPFTuts
         {
             InitializeComponent();
 
-            Person x = new Person();
+            Track t = new Track();
 
-            x.people.Add(new Person { firstName = "Jozo", lastName = "Bozo" });
-            x.people.Add(new Person { firstName = "Hanzo", lastName = "Panzo" });
-            x.people.Add(new Person { firstName = "Fidi", lastName = "Dido" });
+            t.tracks.Add(new Track { TrackName = "Logatec", Type="Rush", ShortDesc="Hiter tempo po ovinkih do idrije", Location="Logatec, SLO", Length=12.8, Diff="mid/high", LongDesc="Lorem Ipsum long Desc long Desc" });
+            t.tracks.Add(new Track { TrackName = "Crni Kal", Type="Rush", ShortDesc="Dolgi ovinki, vista na vrhu, restavracija v sredini", Location="Koper, SLO", Length=4.2, Diff="low/mid", LongDesc="Lorem Ipsum long Desc long Desc" });
+            t.tracks.Add(new Track { TrackName = "Vrsic", Type="Climb", ShortDesc="Kratki ostri ovinki, vista na vrhu, pozimi sneg", Location="Vrsic, SLO", Length=8.2, Diff="mid", LongDesc="Lorem Ipsum long Desc long Desc" });
 
-            cBox.ItemsSource = x.people;
+            rideType.ItemsSource = t.tracks;
         }
 
-        private void text_mouseUp(object sender, MouseButtonEventArgs e)
+        private void loginBtn_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("You clicked me at " + e.GetPosition(this).ToString(), "Target Area");
-        }
 
-        private void textPanel2_MouseUp(object sender, MouseButtonEventArgs e)
-        {
-            MessageBox.Show("MessageBox.Show(\"Hello user\");");
-        }
+            if (userName.Text.Length == 0)
+            {
 
-        private void loginButton_Click(object sender, RoutedEventArgs e)
-        {
-            MessageBox.Show($"Hello {userName.Text}", "Greeting");
-        }
+                MessageBox.Show($"Username cannot be empty", "Error :(", MessageBoxButton.OK, MessageBoxImage.Error);
 
-        public bool AutoPlay { get; set; }
+            }
 
-        private void nextWin_Click(object sender, RoutedEventArgs e)
-        {
-            Window1 win1 = new Window1();
-            this.Close();
-            win1.Show();
+            else if (userName.Text.Length >= 16)
+            {
+                MessageBox.Show($"Username should be between 3 and 16 characters", "Error :(", MessageBoxButton.OK, MessageBoxImage.Error);
+
+            }
+
+            else if (userName.Text.Length <= 2)
+            {
+
+                MessageBox.Show($"Username should be between 3 and 16 characters", "Error :(", MessageBoxButton.OK, MessageBoxImage.Error);
+
+            }
+            else
+            {
+
+            MessageBox.Show($"Welcome, {userName.Text}", "Login Successful",MessageBoxButton.OK);
+            }
         }
     }
 }

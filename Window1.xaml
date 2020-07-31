@@ -7,10 +7,65 @@
         mc:Ignorable="d"
         Title="Window1" Height="450" Width="800">
     <Grid Background="{DynamicResource WindowBackgroundBrush}" >
+      
         <Grid.ColumnDefinitions>
-            
-            
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="10"/>
         </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="10"/>
+        </Grid.RowDefinitions>
         
+        
+        <!-- ROW 1 -->
+        <TextBlock x:Name="eventPanel"  Padding="7" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2" TextAlignment="Center" Background="#FFF7D67C">
+    EVENT C1 R1
+        </TextBlock>
+        <TextBlock Padding="7"  Grid.Column="3" Grid.Row="1" TextAlignment="Center" Background="#FF5BDAFF">
+    Block C3 R1
+        </TextBlock>
+        <TextBlock Padding="7" Grid.Column="4" Grid.Row="1" TextAlignment="Center" Background="#FFFF7979">
+    Block C4 R1
+        </TextBlock>
+
+
+        <!-- ROW 2 -->
+        <TextBlock Padding="2,0"  Grid.Column="1" Grid.Row="2" TextAlignment="Center" Background="#FFF7D67C">
+    DISPLAY MSG
+        </TextBlock>
+        <TextBlock Grid.Column="2"  Grid.Row="2" TextAlignment="Center" Background="#FF7CFF76">
+    Block C2 R2
+        </TextBlock>
+        <TextBlock Grid.Column="3"  Grid.Row="2" TextAlignment="Center" Background="#FF5BDAFF">
+    Block C3 R2
+        </TextBlock>
+        <TextBlock Grid.Column="4" Grid.Row="2" TextAlignment="Center" Background="#FFFF7979" Foreground="Black">
+    Block C4 R2
+        </TextBlock>
+
+        <!-- ROW 3 -->
+        <TextBlock Grid.Column="1" Grid.Row="3"  TextAlignment="Center" Background="#FFF7D67C">
+    Block C1 R2
+        </TextBlock>
+        <TextBlock Grid.Column="2" Grid.Row="3" TextAlignment="Center" Background="#FF7CFF76">
+    Block C2 R2
+        </TextBlock>
+        <TextBlock Grid.Column="3" Grid.Row="3" TextAlignment="Center" Background="#FF5BDAFF">
+    Block C3 R2
+        </TextBlock>
+        <TextBlock Grid.Column="4" Grid.Row="3" TextAlignment="Center" Background="#FFFF7979" Foreground="Black">
+    Block C4 R2
+        </TextBlock>
+
     </Grid>
 </Window>

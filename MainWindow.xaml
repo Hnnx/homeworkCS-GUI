@@ -4,35 +4,23 @@ xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 xmlns:sys="clr-namespace:System;assembly=mscorlib"
 Title="Cols N Rows -  WPF Training" Height="450" Width="850"
 ShowInTaskbar="True"
-FontFamily="Arial Nova"    
-FontSize="22"
-Background="{DynamicResource WindowBackgroundBrush}"
+FontFamily="Segoe UI Semilight"
+FontSize="22"  
+Foreground="White"
+Background="{StaticResource WindowBackgroundBrush}"
 >
     <Window.Resources>
         <sys:String x:Key="strJanir">Janir Racing Login</sys:String>
-
-
-        <sys:String x:Key="cbTitle">Type:</sys:String>
-
-
-        <x:Array x:Key="comboBoxItems" Type="sys:String">
-            <sys:String>Rush</sys:String>
-            <sys:String>Panorama</sys:String>
-            <sys:String>Curves</sys:String>
-        </x:Array>
-
     </Window.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
-            <!-- "margin" = 10px -->
-            <!-- 0-based grid/col index -->
-            <ColumnDefinition Width="10" />
-            <ColumnDefinition Width="auto" />
-            <ColumnDefinition Width="auto" />
-            <ColumnDefinition Width="auto" />
-            <ColumnDefinition Width="auto" />
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="10"/>
+            <!-- 0-based grid system -->
+            <ColumnDefinition Width="10"/> <!-- Col 0 -->
+            <ColumnDefinition Width="auto"/> <!-- Col 1 -->
+            <ColumnDefinition Width="auto"/> <!-- Col 2 -->
+            <ColumnDefinition Width="auto"/> <!-- Col 3 -->
+            <ColumnDefinition Width="*"/> <!-- Col 4 -->
+            <ColumnDefinition Width="10"/> <!-- Col 5-->
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="10"/>
@@ -41,99 +29,44 @@ Background="{DynamicResource WindowBackgroundBrush}"
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="10"/>
         </Grid.RowDefinitions>
-
-
-        <!-- ROW 1 -->
-        <TextBlock Name="textPanel" MouseUp="text_mouseUp" Padding="7" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2" TextAlignment="Center" Background="#FFF7D67C">
-    EVENT C1 R1
-        </TextBlock>
-        <TextBlock Padding="7"  Grid.Column="3" Grid.Row="1" TextAlignment="Center" Background="#FF5BDAFF">
-    Block C3 R1
-        </TextBlock>
-        <TextBlock Padding="7" Grid.Column="4" Grid.Row="1" TextAlignment="Center" Background="#FFFF7979">
-    Block C4 R1
-        </TextBlock>
-
-
-        <!-- ROW 2 -->
-        <TextBlock Padding="2,0" Name="textPanel2" MouseUp="textPanel2_MouseUp"  Grid.Column="1" Grid.Row="2" TextAlignment="Center" Background="#FFF7D67C">
-    DISPLAY MSG
-        </TextBlock>
-        <TextBlock Grid.Column="2"  Grid.Row="2" TextAlignment="Center" Background="#FF7CFF76">
-    Block C2 R2
-        </TextBlock>
-        <TextBlock Grid.Column="3"  Grid.Row="2" TextAlignment="Center" Background="#FF5BDAFF">
-    Block C3 R2
-        </TextBlock>
-        <TextBlock Grid.Column="4" Grid.Row="2" TextAlignment="Center" Background="#FFFF7979" Foreground="Black">
-    Block C4 R2
-        </TextBlock>
-
-        <!-- ROW 3 -->
-        <TextBlock Grid.Column="1" Grid.Row="3"  TextAlignment="Center" Background="#FFF7D67C">
-    Block C1 R2
-        </TextBlock>
-        <TextBlock Grid.Column="2" Grid.Row="3" TextAlignment="Center" Background="#FF7CFF76">
-    Block C2 R2
-        </TextBlock>
-        <TextBlock Grid.Column="3" Grid.Row="3" TextAlignment="Center" Background="#FF5BDAFF">
-    Block C3 R2
-        </TextBlock>
-        <TextBlock Grid.Column="4" Grid.Row="3" TextAlignment="Center" Background="#FFFF7979" Foreground="Black">
-    Block C4 R2
-        </TextBlock>
-
-        <!-- ROW 4 -->
-
-        <TextBlock Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="3" FontSize="35" Text="{StaticResource strJanir}" />
-        <TextBox x:Name="userName"  Grid.Column="1" Grid.Row="5" Margin="10" Grid.ColumnSpan="2" />
-
-        <!-- ROW 5 -->
-        <Button Content="Log In" Grid.Column="3" Grid.Row="5" x:Name="loginButton" Click="loginButton_Click" Margin="10" />
-
-        <!-- ROW 6-->
-
-        <StackPanel Orientation="Vertical" Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="2" >
-            <Label Content="{StaticResource cbTitle}"/>
-            <ComboBox Margin="10,0" ItemsSource="{StaticResource comboBoxItems}"/>
-        </StackPanel>
-
-        <!-- ROW 7 -->
         
-        <StackPanel Orientation="Vertical" Grid.Column="3" Grid.Row="6" Grid.ColumnSpan="2">
-            <Label Content="Name:"/>
-            <ComboBox x:Name="cBox" Margin="10,0">
-                <ComboBox.ItemTemplate>
-                    <DataTemplate>
-                        <TextBlock Text="{Binding fullName}"/>
-                    </DataTemplate>
-                </ComboBox.ItemTemplate>
-            </ComboBox>
+        <!-- Row 1 - title -->
+        <TextBlock Grid.Column="1" Grid.Row="1"  Grid.ColumnSpan="3" 
+                   Text="{DynamicResource strJanir}" FontSize="42" Margin="0,0,0,30" />
+        
+        <!-- Row 2 username -->
+        <TextBlock Grid.Column="1" Grid.Row="2" Text="Username" FontWeight="Bold" Margin="10,0" VerticalAlignment="Center"/>
+        <TextBox  Grid.Column="2" Grid.Row="2" x:Name="userName" Width="200" Margin="10,0" />
+        
+        <!-- Row 3 Button -->
+        <Button Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="2"
+                Content="Log in" x:Name="loginBtn"
+                Margin="10" FontFamily="Arial Nova" Click="loginBtn_Click" />
+
+        <!-- Row 4 ComboBox -->
+        <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="2"
+                    >
+            <TextBlock Text="Ride Type" VerticalAlignment="Center"/>
+            <ComboBox
+                  Margin="10,5"
+                  x:Name="rideType" ToolTip="Ride Type"
+                  Width="200" SelectedIndex="0">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding TrackName}"/>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
         </StackPanel>
         
-        
-        <!-- ROW 8 -->
+        <!-- image -->
 
-        <Button Content="Enter" Grid.Column="1" Grid.Row="7" x:Name="nextWin" Margin="10,30" Grid.ColumnSpan="2" Click="nextWin_Click"/>
-
-
-        <!-- Slike/Video v kotu -->
-
-        <Image Grid.Row="0" Grid.Column="5" Grid.RowSpan="6" Source="C:\Users\anhjje\Desktop\kacic.png" MinWidth="250" MaxWidth="450" />
-
-        <Border  Grid.Row="6" Grid.Column="5" Grid.RowSpan="2" BorderBrush="Black" BorderThickness="5" CornerRadius="10" MinWidth="250" MaxWidth="600" >
-            <StackPanel>
-                <MediaElement Source="C:\Users\anhjje\Desktop\grob.mp4" LoadedBehavior="Play" IsMuted="true" />
-            </StackPanel>
-        </Border>
-        
-        
+        <Image Grid.Column="4" Grid.Row="1" Grid.RowSpan="6" 
+               Source="img\kacic.jpg"
+               MinWidth="150"/>
 
     </Grid>
 </Window>
