@@ -14,17 +14,11 @@ namespace WPFTuts
     public partial class App : Application
     {
 
-        private void Application_Startup(object sender, StartupEventArgs e)
+        private void Application_DispatcherUnhandledException(object sender, System.Windows.Threading.DispatcherUnhandledExceptionEventArgs e)
         {
-            MainWindow w = new MainWindow();
+            MessageBox.Show("Prislo je do napake: " + e.Exception.Message, "Napaka", MessageBoxButton.OK, MessageBoxImage.Error);
+            e.Handled = true;
 
-            if(e.Args.Length == 1)
-            {
-                MessageBox.Show("Now opening file: \n\n" + e.Args[0]);
-            }
-
-            w.Show();
         }
-       
     }
 }

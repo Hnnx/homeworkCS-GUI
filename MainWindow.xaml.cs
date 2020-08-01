@@ -42,27 +42,49 @@ namespace WPFTuts
 
             if (userName.Text.Length == 0)
             {
-
                 MessageBox.Show($"Username cannot be empty", "Error :(", MessageBoxButton.OK, MessageBoxImage.Error);
-
             }
 
             else if (userName.Text.Length >= 16)
             {
                 MessageBox.Show($"Username should be between 3 and 16 characters", "Error :(", MessageBoxButton.OK, MessageBoxImage.Error);
-
             }
 
             else if (userName.Text.Length <= 2)
             {
-
                 MessageBox.Show($"Username should be between 3 and 16 characters", "Error :(", MessageBoxButton.OK, MessageBoxImage.Error);
-
             }
             else
             {
-
             MessageBox.Show($"Welcome, {userName.Text}", "Login Successful",MessageBoxButton.OK);
+
+
+
+                string s = null;
+                try
+                {
+                    //Trim inside of try/catch - exception handled by t/c block
+                    s.Trim();
+                } catch(Exception ex)
+                {
+                    MessageBox.Show("Example od Error handled with try/catch block:\n" + ex.Message,"Error");
+                }
+
+                //Trim outside of try/catch - exception handled by App.xaml
+                //s.Trim();
+
+                try
+                {
+                Window1 win1 = new Window1();
+                    this.Close();
+                    win1.Show();
+
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show("Prislo je do napake!: " + ex.Message, "Napaka");
+                }
+
             }
         }
     }

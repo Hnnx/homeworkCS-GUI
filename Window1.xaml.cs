@@ -23,5 +23,15 @@ namespace WPFTuts
         {
             InitializeComponent();
         }
+
+        private void Hyperlink_RequestNavigate(object sender, System.Windows.Navigation.RequestNavigateEventArgs e)
+        {
+            System.Diagnostics.Process.Start(e.Uri.AbsoluteUri);
+        }
+
+        private void openPage2_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
