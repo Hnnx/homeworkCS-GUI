@@ -25,6 +25,7 @@
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="10"/>
         </Grid.RowDefinitions>
@@ -66,15 +67,25 @@
             </TextBlock>
         </StackPanel>
         
-        <!-- row 5 LINK -->
-        <TextBlock Grid.Column="1" Grid.Row="5">
+        <!-- row 5 Label / border -->
+
+        <Label Grid.Column="1" Grid.Row="5"
+               Foreground="white"
+               Content="Turns out you can add borders (Or images) to LABEL but not TextBlock" 
+               BorderBrush="Black" BorderThickness="15" Background="#FFA22626"/>
+
+        <!-- row 6 LINK -->
+        <TextBlock Grid.Column="1" Grid.Row="6">
             Example of a <Hyperlink Foreground="BLACK" FontSize="15"  NavigateUri="https://github.com/Hnnx" RequestNavigate="Hyperlink_RequestNavigate">Hyperlink</Hyperlink>
         </TextBlock>
+        
+        <!-- row 7 button -->
 
-        <Button Grid.Column="1" Grid.Row="6"
+        <Button Grid.Column="1" Grid.Row="7"
                 Width="70"
                 HorizontalAlignment="Left"
                 Margin="10"
+                BorderBrush="Black" BorderThickness="3"
             x:Name="openPage2" Content="next page" Click="openPage2_Click" />
 
     </Grid>

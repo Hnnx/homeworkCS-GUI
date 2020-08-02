@@ -32,6 +32,18 @@ namespace WPFTuts
         private void openPage2_Click(object sender, RoutedEventArgs e)
         {
 
+            try
+            {
+                Window2 w = new Window2();
+                w.Show();
+                this.Close();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Prislo je do napake: " + ex.Message, "Napaka", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
+
         }
     }
 }
