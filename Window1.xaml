@@ -81,12 +81,17 @@
         
         <!-- row 7 button -->
 
-        <Button Grid.Column="1" Grid.Row="7"
-                Width="70"
-                HorizontalAlignment="Left"
-                Margin="10"
-                BorderBrush="Black" BorderThickness="3"
-            x:Name="openPage2" Content="next page" Click="openPage2_Click" />
+        <StackPanel Grid.Column="1" Grid.Row="7" Orientation="Horizontal" Grid.ColumnSpan="3"
+                    HorizontalAlignment="Center">
+            <Button Content="PREV" Margin="2,5" Width="50"
+                    x:Name="prevPage"
+                    Click="prevPage_Click"
+                    />
+            <Button Content="NEXT" Margin="2,5" Width="50"
+                    x:Name="nextPage"
+                    Click="nextPage_Click"/>
+
+        </StackPanel>
 
     </Grid>
 </Window>

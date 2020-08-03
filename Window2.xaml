@@ -7,12 +7,11 @@
         mc:Ignorable="d"
         Foreground="white"
         Background="{StaticResource  WindowBackgroundBrush}"
-        Title="Window2" Height="200" Width="400">
+        Title="Window2" Height="340" Width="400">
     <Grid>
 
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="10"/>
-            <ColumnDefinition Width="auto"/>
             <ColumnDefinition Width="auto"/>
             <ColumnDefinition Width="auto"/>
             <ColumnDefinition Width="*"/>
@@ -23,46 +22,77 @@
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="10"/>
         </Grid.RowDefinitions>
 
 
         <!-- Lefthand side -->
-        <TextBlock  Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2"
+        <TextBlock  Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="3"
             Text="More fun with Labels" FontSize="18"/>
 
 
+         <!-- Username + Email with focus --> 
         <StackPanel Orientation="Vertical" Grid.Column="1" Grid.Row="2">
 
             <Label Content="_Username" Target="{Binding ElementName=txtUsername}"
                Foreground="White"/>
-            <TextBox Name="txtUsername"/>
+            <TextBox Name="txtUsername" Width="150"/>
             <Label Content="_Email" Target="{Binding ElementName=txtEmail}"
                Foreground="White"/>
-            <TextBox Name="txtEmail"/>
+            <TextBox Name="txtEmail" Width="150" />
         </StackPanel>
 
         <TextBlock Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="2"
                    Text="(Press ALT+U  or ALT+E to focus on input" FontSize="10"/>
 
-        <!-- Righthand side (textBox multiRow) -->
+        <!-- Righthand side (Mutli Line textbox) -->
 
-        <StackPanel Grid.Column="3" Grid.Row="2" Grid.RowSpan="3"
+        <StackPanel Grid.Column="3" Grid.Row="2" Grid.RowSpan="4"
                     Orientation="Vertical">
             <TextBlock Margin="5,0">
                 MutliLine textbox (Accepts return) <LineBreak/>
                 with English spellcheck
             </TextBlock>
 
-            <TextBox Width="170" HorizontalAlignment="Left"
+            <TextBox Width="150" MaxHeight="170"
+                     HorizontalAlignment="Left"
                      Margin="5,0"
                  AcceptsReturn="True" VerticalScrollBarVisibility="Auto" TextWrapping="Wrap"
                      SpellCheck.IsEnabled="True" Language="en-US" />
         </StackPanel>
+        
+        
+        <!-- bottom selection panel -->
 
+        <StackPanel Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="2" Orientation="Vertical"
+                    >
 
+            <TextBlock Text="Insert text:" HorizontalAlignment="Left"/>
+            <TextBox SelectionChanged="TextBox_SelectionChanged"  Width="150" HorizontalAlignment="Left"/>
+            
+            <TextBlock Text="Status:"/>
+            <TextBox Name="statusWindow" AcceptsReturn="True" TextWrapping="Wrap" IsReadOnly="True" 
+                     Height="70" Width="170" HorizontalAlignment="Left"
+                     VerticalScrollBarVisibility="Auto"
+                     ScrollViewer.CanContentScroll="True" 
+                     Background="Black" Foreground="#FF1A8F00" FontFamily="Consolas"
+                     BorderBrush="#FF1A8F00"
+                     BorderThickness="2" />
+        </StackPanel>
 
+        <StackPanel Grid.Column="1" Grid.Row="5" Orientation="Horizontal" Grid.ColumnSpan="3"
+                    HorizontalAlignment="Center">
+            <Button Content="PREV" Margin="2,5" Width="50"
+                    x:Name="prevPage"
+                    Click="prevPage_Click"
+                    />
+            <Button Content="NEXT" Margin="2,5" Width="50"
+                    x:Name="nextPage"
+                    Click="nextPage_Click"/>
 
+        </StackPanel>
     </Grid>
 </Window>
