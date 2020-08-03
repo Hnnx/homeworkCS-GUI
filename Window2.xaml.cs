@@ -23,5 +23,36 @@ namespace WPFTuts
         {
             InitializeComponent();
         }
+
+        
+        private void TextBox_SelectionChanged(object sender, RoutedEventArgs e)
+        {
+
+
+            TextBox tb = sender as TextBox;
+
+            statusWindow.Text = "Selection length: " + tb.SelectionLength + Environment.NewLine;
+            statusWindow.Text += "Selection index: " + tb.SelectionStart + Environment.NewLine;
+            statusWindow.Text += "Selected text: " + tb.SelectedText + "";
+        }
+
+        private void prevPage_Click(object sender, RoutedEventArgs e)
+        {
+
+            //previous Window:
+            Window1 w = new Window1();
+            w.Show();
+            this.Close();
+
+        }
+
+        private void nextPage_Click(object sender, RoutedEventArgs e)
+        {
+
+            Window3 w = new Window3();
+            w.Show();
+            this.Close();
+
+        }
     }
 }

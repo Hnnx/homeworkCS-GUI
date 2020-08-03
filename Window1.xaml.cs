@@ -29,20 +29,19 @@ namespace WPFTuts
             System.Diagnostics.Process.Start(e.Uri.AbsoluteUri);
         }
 
-        private void openPage2_Click(object sender, RoutedEventArgs e)
+        private void prevPage_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow w = new MainWindow();
+            w.Show();
+            this.Close();
+        }
+
+        private void nextPage_Click(object sender, RoutedEventArgs e)
         {
 
-            try
-            {
-                Window2 w = new Window2();
-                w.Show();
-                this.Close();
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Prislo je do napake: " + ex.Message, "Napaka", MessageBoxButton.OK, MessageBoxImage.Warning);
-            }
+            Window2 w = new Window2();
+            w.Show();
+            this.Close();
 
         }
     }
